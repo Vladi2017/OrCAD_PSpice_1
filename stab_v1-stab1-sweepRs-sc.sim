@@ -1,0 +1,120 @@
+@OrCAD Simulation Server Version: 1.0
+
+@Settings: 1 1
+@General:
+ProfileName= "sweepRs-sc" 
+ProfileFile= "stab_v1-stab1-sweeprs-sc.sim" 
+DesignFile= "stab_v1.dsn" 0 
+ProjectFile= "stab_v1.opj" 
+NetlistFile= "stab_v1-stab1-sweeprs.sim.cir" 
+RootSchematics= "stab1" 
+DataFile= "stab_v1-stab1-sweepRs-sc.dat" 
+OutFile= "stab_v1-stab1-sweepRs-sc.out" 
+Notes=
+@#$BEGINNOTES
+Stabilizator fara protectie la sc, se baleiaza sarcina Rs pana la scurtcircuit (Rs=0.01 Ohm) pt. a evidentia curentul si puterea pe regulatorul serie Q1.
+@#$ENDNOTES
+@End General
+@Analysis: 0 0
++0 0 0 
++0 "1000ns" 
++1 "" 
++2 "0" 
++3 "" 
++4 "" 
++5 "" 
++6 "" 
+@End Analysis
+@Analysis: 1 0
++2 0 0
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
+@End Analysis
+@Analysis: 2 1
++1 2
++0 "Rs" 
++1 "Rload" 
++2 "" 
++3 "" 
++4 "0.1" 
++5 "40" 
++6 "5" 
++7 "" 
+@End Analysis
+@Analysis: 3 0
++0 0 0
++0 "" 
++1 "" 
++2 "" 
+@End Analysis
+@Analysis: 4 0
++0 0 1 0 0 0 1 0 
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
++6 "" 
++7 "" 
+@End Analysis
+@Analysis: 5 0
++0 0
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
++6 "" 
++7 "" 
+@End Analysis
+@Analysis: 6 0
++1 
++0 "" 
+@End Analysis
+@Analysis: 7 0
++0 0
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
+@End Analysis
+@Analysis: 8 0
++0 
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
+@End Analysis
+@Analysis: 9 0
++0 "" 
+@End Analysis
+@Analysis: 10 0
++0 0
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
++6 "" 
++7 "" 
+@End Analysis
+@Analysis: 11 1
++ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+@End Analysis
+@Analysis: 12 0
++1118480 0
+@End Analysis
+@Analysis: 13 1
++0 1 1 0
+@End Analysis

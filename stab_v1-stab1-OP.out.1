@@ -1,0 +1,214 @@
+
+**** 05/09/22 12:34:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-op.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "stab_v1-stab1-op.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OP
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\stab_v1-stab1.net" 
+
+
+
+**** INCLUDING stab_v1-stab1.net ****
+* source STAB_V1
+R_Rs         VO 0  {Rload}  
+R_R         N21878 VI  100K  
+R_P         D N592000 {500k*0.45+.001}
+R_R5         N50405 N53086  68  
+R_R1         VO D  1Meg  
+V_V1         VI 0 15V
+D_D1         0 N41071 D1N4733 
+R_R2         0 N592000  1.2Meg  
+Q_Q1         VO N53086 VI QBD136/PLP 
+R_Rz         N41071 VO  150  
+Q_Q3         N21878 D N41071 BC546A 
+Q_Q2         N50405 N21878 N41071 BC546A 
+C_C1         VO 0  47u  
+.PARAM  Rload=31
+
+**** RESUMING stab_v1-stab1-op.sim.cir ****
+.END
+
+**** 05/09/22 12:34:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-op.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4733         
+          IS    1.214000E-15 
+         ISR    2.601000E-09 
+          BV    5.1          
+         IBV     .70507      
+         NBV     .74348      
+        IBVL    4.827400E-03 
+        NBVL    6.7393       
+          RS    1.078        
+         CJO  185.000000E-12 
+          VJ     .75         
+           M     .3509       
+        TBV1  176.471000E-06 
+
+
+**** 05/09/22 12:34:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-op.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               QBD136/PLP      BC546A          
+               PNP             NPN             
+          IS   74.010000E-15    7.049000E-15 
+          BF  336.5           253            
+          NF     .9938          1            
+         VAF   22.47          127.9          
+         IKF     .1689           .07705      
+         ISE  410.400000E-18   96.260000E-15 
+          NE    1.054           1.556        
+          BR   13.91            1            
+          NR     .9913          1            
+         VAR   30                            
+         IKR     .09888         3.321        
+         ISC   12.900000E-15  130.800000E-15 
+          NC    1.1             1.602        
+          NK                     .5305       
+          RB     .5                          
+         RBM     .5                          
+         IRB    1.000000E-06                 
+          RE     .208                        
+          RC     .05526          .8766       
+         CJE  106.600000E-12   11.500000E-12 
+         VJE     .69             .5          
+         MJE     .3676           .6715       
+         CJC   52.340000E-12    5.250000E-12 
+         VJC     .6431           .5697       
+         MJC     .4436           .3147       
+        XCJC     .44                         
+         MJS     .333                        
+          FC     .99                         
+          TF  257.800000E-12  409.500000E-12 
+         XTF   13.56           40.12         
+         VTF    2.366          10            
+         ITF    1.304           1.994        
+          TR  100.000000E-27   10.000000E-09 
+         XTB                    1.5          
+          CN    2.2             2.42         
+           D     .52             .87         
+
+
+**** 05/09/22 12:34:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-op.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    D)    5.6801  (   VI)   15.0000  (   VO)   10.2300  (N21878)    5.7800     
+
+(N41071)    5.0830 (N50405)   13.9010 (N53086)   14.1470 (N592000)    4.7833    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -3.680E-01
+
+    TOTAL POWER DISSIPATION   5.52E+00  WATTS
+
+
+**** 05/09/22 12:34:48 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-op.sim ] 
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1      
+MODEL        D1N4733   
+ID          -3.80E-02 
+VD          -5.08E+00 
+REQ          5.50E-01 
+CAP          9.03E-11 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1        Q_Q3        Q_Q2      
+MODEL        QBD136/PLP  BC546A      BC546A    
+IB          -3.62E-03    5.64E-07    1.73E-05 
+IC          -3.64E-01    7.49E-05    3.62E-03 
+VBE         -8.53E-01    5.97E-01    6.97E-01 
+VBC          3.92E+00   -9.99E-02   -8.12E+00 
+VCE         -4.77E+00    6.97E-01    8.82E+00 
+BETADC       1.01E+02    1.33E+02    2.09E+02 
+GM           8.55E+00    2.89E-03    1.34E-01 
+RPI          7.20E+00    5.53E+04    1.60E+03 
+RX           5.00E-01    0.00E+00    0.00E+00 
+RO           7.08E+01    1.71E+06    3.76E+04 
+CBE          1.04E-08    3.66E-11    9.52E-11 
+CBC          9.68E-12    4.99E-12    2.23E-12 
+CJS          0.00E+00    0.00E+00    0.00E+00 
+BETAAC       6.16E+01    1.60E+02    2.14E+02 
+CBX/CBX2     1.23E-11    0.00E+00    0.00E+00 
+FT/FT2       1.31E+08    1.11E+07    2.19E+08 
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

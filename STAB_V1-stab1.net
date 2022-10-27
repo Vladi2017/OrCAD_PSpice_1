@@ -1,0 +1,14 @@
+* source STAB_V1
+R_Rs         VO 0  {Rload}  
+R_R         N21878 VI  100k  
+R_P         D N592000 {50k*0.25+.001}
+R_R5         N50405 N53086  68  
+R_R1         VO D  130k  
+V_V1         VI 0 10V
+D_D1         0 N41071 D1N4733 
+R_R2         0 N592000  160k  
+Q_Q1         VO N53086 VI QBD136/PLP 
+R_Rz         N41071 VO  150  
+Q_Q3         N21878 D N41071 BC546A 
+Q_Q2         N50405 N21878 N41071 BC546A 
+.PARAM  Rload=32

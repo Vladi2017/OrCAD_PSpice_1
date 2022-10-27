@@ -1,0 +1,19 @@
+** Profile: "stab2Prot2RedrMono1-tran1"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2prot2redrmono1-tran1.sim ] 
+
+** Creating circuit file "stab_v1-stab2prot2redrmono1-tran1.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.3 0.22 
+.SAVEBIAS "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\bias1" TRAN NOSUBCKT 
+.OPTIONS LIST
+.PROBE V(alias(*)) I(alias(*)) W(alias(*)) 
+.INC ".\stab_v1-stab2Prot2RedrMono1.net" 
+
+
+.END

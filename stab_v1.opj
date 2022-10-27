@@ -1,0 +1,219 @@
+(ExpressProject "stab_v1"
+  (ProjectVersion "19981106")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    (NoModify)
+    (File ".\stab_v1.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (RootChangedForceReNetlist "x"))
+  (Folder "Outputs"
+    (File ".\stab_v1-schematic1.net"
+      (Type "Report"))
+    (File ".\stab_v1-schematic2.net"
+      (Type "Report"))
+    (File ".\stab_v1-stab1.net"
+      (Type "Report"))
+    (File ".\stab_v1-demo1.net"
+      (Type "Report"))
+    (File ".\stab_v1-stab2protection1.net"
+      (Type "Report"))
+    (File ".\stab_v1-stab2protection1.opt"
+      (Type "Report"))
+    (File ".\stab_v1-stab2prot2.net"
+      (Type "Report"))
+    (File ".\stab_v1-stab2prot3.net"
+      (Type "Report"))
+    (File ".\stab_v1-trials.net"
+      (Type "Report"))
+    (File ".\stab_v1-stab2prot2.opt"
+      (Type "Report"))
+    (File ".\stab_v1-stab2prot2redrmono1.net"
+      (Type "Report"))
+    (File ".\stab_v1-stab1redrmono1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab1-op.sim"
+        (DisplayName "stab1-OP")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab1-dc_sweep_vi.sim"
+        (DisplayName "stab1-DC_Sweep_vI")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab1-sweeprs-sc.sim"
+        (DisplayName "stab1-sweepRs-sc")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab2prot2-dc_sweep_vi.sim"
+        (DisplayName "stab2Prot2-DC_Sweep_vI")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab2prot2-op.sim"
+        (DisplayName "stab2Prot2-OP")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab2prot2-sweep_rs_vi.sim"
+        (DisplayName "stab2Prot2-sweep_Rs_vI")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab1-sweep_rs_vi.sim"
+        (DisplayName "stab1-sweep_Rs_vI")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab2prot2-sweeprs-sc.sim"
+        (DisplayName "stab2Prot2-sweepRS-sc")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab2prot2redrmono1-tran1.sim"
+        (DisplayName "stab2Prot2RedrMono1-tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\stab_v1-stab1redrmono1-tran1.sim"
+        (DisplayName "stab1RedrMono1-tran1")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\stab_v1-stab2prot2redrmono1-tran1.sim"))
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (C_elect
+      (FullPartName "C_elect.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (BYV27-100
+      (FullPartName "BYV27-100.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (OPTPARAM
+      (FullPartName "OPTPARAM.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\MARKER.ETC")
+      (DeviceIndex "0"))
+    (BCV47
+      (FullPartName "BCV47.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\DARLNGTN.OLB")
+      (DeviceIndex "0"))
+    (BCV46
+      (FullPartName "BCV46.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\DARLNGTN.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (MLED81
+      (FullPartName "MLED81.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\OPTO.OLB")
+      (DeviceIndex "0"))
+    (D1N4733
+      (FullPartName "D1N4733.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (IRFP9241
+      (FullPartName "IRFP9241.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\PWRMOS.OLB")
+      (DeviceIndex "0"))
+    (IRF132
+      (FullPartName "IRF132.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\PWRMOS.OLB")
+      (DeviceIndex "0"))
+    (W
+      (FullPartName "W.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (D02CZ5_1
+      (FullPartName "D02CZ5_1.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\JDIODE.OLB")
+      (DeviceIndex "0"))
+    (BC107BP/ZTX
+      (FullPartName "BC107BP/ZTX.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ZETEX.OLB")
+      (DeviceIndex "0"))
+    (BC558A
+      (FullPartName "BC558A.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\EBIPOLAR.OLB")
+      (DeviceIndex "0"))
+    (BC212AP/ZTX
+      (FullPartName "BC212AP/ZTX.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ZETEX.OLB")
+      (DeviceIndex "0"))
+    (BD136/PLP
+      (FullPartName "BD136/PLP.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\PHIL_BJT.OLB")
+      (DeviceIndex "0"))
+    (PN4355
+      (FullPartName "PN4355.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\BIPOLAR.OLB")
+      (DeviceIndex "0"))
+    (MPSA56
+      (FullPartName "MPSA56.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\BIPOLAR.OLB")
+      (DeviceIndex "0"))
+    (BC213AP/ZTX
+      (FullPartName "BC213AP/ZTX.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ZETEX.OLB")
+      (DeviceIndex "0"))
+    (BC212
+      (FullPartName "BC212.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    (R_var
+      (FullPartName "R_var.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (BC546A
+      (FullPartName "BC546A.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\EBIPOLAR.OLB")
+      (DeviceIndex "0"))
+    (BD135-10/PLP
+      (FullPartName "BD135-10/PLP.Normal")
+      (LibraryName "C:\ORCAD\CAPTURE\LIBRARY\PSPICE\PHIL_BJT.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1.dsn")
+      (Path "Design Resources"
+         "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1.dsn"
+         "stab2Prot2")
+      (Path "Design Resources"
+         "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1.dsn"
+         "stab1")
+      (Path "Design Resources"
+         "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1.dsn"
+         "stab1RedrMono1")
+      (Path "Design Resources"
+         "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1.dsn"
+         "stab2Prot2RedrMono1")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Outputs"
+         "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2protection1.opt"))
+    (HierarchyView
+      (Path "stab2Prot2")
+      (Select "stab2Prot2" "P (50K)"))
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 160 610 -8 -31 0 332 -3 806"))
+      (Tab 0)))
+  (LastUsedLibraryBrowseDirectory "C:\Orcad\Capture\Library\PSpice"))

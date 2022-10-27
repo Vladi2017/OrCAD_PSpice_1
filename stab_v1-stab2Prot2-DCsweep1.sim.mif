@@ -1,0 +1,6 @@
+ lib=C:\Orcad\Capture\Library\PSpice\opto.lib, offset=21487, size=324
+ lib=C:\Orcad\Capture\Library\PSpice\jdiode.lib, offset=10855, size=158
+ lib=C:\Orcad\Capture\Library\PSpice\phil_bjt.lib, offset=71499, size=613
+ lib=C:\Orcad\Capture\Library\PSpice\ebipolar.lib, offset=12436, size=387
+ lib=C:\Orcad\Capture\Library\PSpice\ebipolar.lib, offset=5964, size=386
+ lib=C:\Orcad\Capture\Library\PSpice\zetex.lib, offset=17622, size=301

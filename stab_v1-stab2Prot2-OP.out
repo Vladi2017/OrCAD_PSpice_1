@@ -1,0 +1,272 @@
+
+**** 05/16/22 00:54:54 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2prot2-op.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "stab_v1-stab2prot2-op.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OP
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\stab_v1-stab2Prot2.net" 
+
+
+
+**** INCLUDING stab_v1-stab2Prot2.net ****
+* source STAB_V1
+X_Q5         VI N59015 N67188 BCV47
+R_R1         VO D  130k  
+Q_Q1         VO N53086 N19462 QBD136/PLP 
+Q_Q4         N59015 N19462 VI BC558A 
+R_R2         0 N363190  160k  
+R_R         N21831 VI  100K  
+Q_Q2         N50405 N21831 N41071 BC546A 
+V_V1         VI 0 10V
+R_R7         N67188 D  100  
+D_D1         0 N41071 D1N4733 
+R_R6/1W         VI N19462  560mOhm  
+Q_Q3         N21831 D N41071 BC546A 
+R_P         D N363190 {50k*0.25+.001}
+R_R5         N50405 N53086  68  
+R_Rz         N41071 VO  150  
+R_Rs         VO 0  {Rload}  
+.PARAM  Rload=380
+
+**** RESUMING stab_v1-stab2prot2-op.sim.cir ****
+.END
+
+**** 05/16/22 00:54:54 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2prot2-op.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4733         X_Q5.Dmodel     
+          IS    1.214000E-15   10.000000E-15 
+         ISR    2.601000E-09                 
+          BV    5.1                          
+         IBV     .70507                      
+         NBV     .74348                      
+        IBVL    4.827400E-03                 
+        NBVL    6.7393                       
+          RS    1.078           1.000000E-03 
+         CJO  185.000000E-12   10.000000E-21 
+          VJ     .75                         
+           M     .3509                       
+        TBV1  176.471000E-06                 
+
+
+**** 05/16/22 00:54:54 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2prot2-op.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               QBD136/PLP      BC558A          BC546A          X_Q5.Q1model    
+               PNP             PNP             NPN             NPN             
+          IS   74.010000E-15    1.020000E-15    7.049000E-15   28.882050E-15 
+          BF  336.5           174.7           253             327.434        
+          NF     .9938          1               1               1            
+         VAF   22.47           73.79          127.9           100            
+         IKF     .1689           .1023           .07705         1.21592      
+         ISE  410.400000E-18   10.730000E-15   96.260000E-15    2.917181E-15 
+          NE    1.054           1.644           1.556           1.26311      
+          BR   13.91            4.432           1               1.1125       
+          NR     .9913          1               1               1            
+         VAR   30                                             100            
+         IKR     .09888         2.237           3.321          48.307800E-06 
+         ISC   12.900000E-15   14.740000E-15  130.800000E-15   13.715500E-15 
+          NC    1.1             1.296           1.602           2.00409      
+          NK                     .5033           .5305           .675285     
+          RB     .5                                            19.98         
+         RBM     .5                                                          
+         IRB    1.000000E-06                                                 
+          RE     .208                                                        
+          RC     .05526         1.039            .8766           .018801     
+         CJE  106.600000E-12   30.000000E-12   11.500000E-12   13.300000E-12 
+         VJE     .69             .5              .5              .35         
+         MJE     .3676           .3333           .6715           .25875      
+         CJC   52.340000E-12    9.810000E-12    5.250000E-12    8.502000E-12 
+         VJC     .6431           .4865           .5697                       
+         MJC     .4436           .332            .3147           .3333       
+        XCJC     .44                                             .9          
+         MJS     .333                                                        
+          FC     .99                                                         
+          TF  257.800000E-12  830.300000E-12  409.500000E-12    1.000000E-09 
+         XTF   13.56           10.32           40.12           10            
+         VTF    2.366          10              10              10            
+         ITF    1.304            .8981          1.994           1            
+          TR  100.000000E-27   10.000000E-09   10.000000E-09    1.000000E-09 
+         XTB                    1.5             1.5                          
+          CN    2.2             2.2             2.42            2.42         
+           D     .52             .52             .87             .87         
+
+
+               X_Q5.Q2model    
+               NPN             
+          IS   28.882050E-15 
+          BF  327.434        
+          NF    1            
+         VAF  100            
+         IKF    1.21592      
+         ISE    2.917181E-15 
+          NE    1.26311      
+          BR    1.1125       
+          NR    1            
+         VAR  100            
+         IKR   48.307800E-06 
+         ISC   13.715500E-15 
+          NC    2.00409      
+          NK     .675285     
+          RB   19.98         
+          RC     .018801     
+         CJE   13.300000E-12 
+         VJE     .35         
+         MJE     .25875      
+         MJC     .3333       
+        XCJC     .9          
+          TF    1.000000E-09 
+         XTF   10            
+         VTF   10            
+         ITF    1            
+          TR    1.000000E-09 
+          CN    2.42         
+           D     .87         
+
+
+**** 05/16/22 00:54:54 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2prot2-op.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    D)    5.6412  (   VI)   10.0000  (   VO)    9.9151  (N19462)    9.9645     
+
+(N21831)    5.7886 (N41071)    5.0818 (N50405)    8.8772 (N53086)    9.2168     
+
+(N59015)    5.8024 (N67188)    5.6412 (X_Q5.4)    5.7473 (N363190)    5.2324    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.338E-02
+
+    TOTAL POWER DISSIPATION   6.34E-01  WATTS
+
+
+**** 05/16/22 00:54:54 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2prot2-op.sim ] 
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1        X_Q5.D1               
+MODEL        D1N4733     X_Q5.Dmodel           
+ID          -3.73E-02   -4.37E-12             
+VD          -5.08E+00   -4.36E+00             
+REQ          5.63E-01    1.00E+12             
+CAP          9.03E-11    4.32E-21             
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         Q_Q1        Q_Q4        Q_Q2        Q_Q3      
+MODEL        QBD136/PLP  BC558A      BC546A      BC546A    
+IB          -4.99E-03    9.40E-13    2.47E-05    1.74E-07 
+IC          -5.83E-02   -5.39E-12    4.99E-03    1.75E-05 
+VBE         -7.48E-01   -3.55E-02    7.07E-01    5.59E-01 
+VBC         -6.98E-01    4.16E+00   -3.09E+00   -1.47E-01 
+VCE         -4.95E-02   -4.20E+00    3.80E+00    7.07E-01 
+BETADC       1.17E+01   -5.74E+00    2.03E+02    1.00E+02 
+GM           1.66E+00    1.07E-13    1.81E-01    6.75E-04 
+RPI          3.71E+01    1.70E+12    1.11E+03    1.90E+05 
+RX           5.00E-01    0.00E+00    0.00E+00    0.00E+00 
+RO           7.77E-01    8.98E+11    2.62E+04    7.34E+06 
+CBE          3.32E-09    3.07E-11    1.15E-10    3.38E-11 
+CBC          9.42E-10    4.64E-12    2.93E-12    4.88E-12 
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+BETAAC       6.18E+01    1.82E-01    2.02E+02    1.28E+02 
+CBX/CBX2     1.24E-09    0.00E+00    0.00E+00    0.00E+00 
+FT/FT2       4.82E+07    4.82E-04    2.45E+08    2.77E+06 
+
+
+
+NAME         X_Q5.Q1                 X_Q5.Q2               
+MODEL        X_Q5.Q1model            X_Q5.Q2model          
+IB          -3.80E-12               -3.79E-12             
+IC           8.50E-12                9.89E-12             
+VBE          5.52E-02                1.06E-01             
+VBC         -4.20E+00               -4.25E+00             
+VCE          4.25E+00                4.36E+00             
+BETADC      -2.24E+00               -2.61E+00             
+GM           9.72E-12                5.75E-11             
+RPI          1.94E+12                4.86E+11             
+RX           2.00E+01                2.44E+01             
+RO           9.20E+11                9.10E+11             
+CBE          1.39E-11                1.20E-11             
+CBC          4.08E-12                1.00E-21             
+CJS          0.00E+00                0.00E+00             
+BETAAC       1.89E+01                2.80E+01             
+CBX/CBX2     4.53E-13                0.00E+00             
+FT/FT2       8.39E-02                7.64E-01             
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

@@ -1,0 +1,18 @@
+** Profile: "stab2Prot2-sweep_Rs_vI"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2Prot2-sweep_Rs_vI.sim ] 
+
+** Creating circuit file "stab_v1-stab2Prot2-sweep_Rs_vI.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM Rload 101 31 -2 
++ V_V1 LIST 10 10.1 10.2 10.4 11 13 15 
+.PROBE V(*) I(*) W(*) 
+.INC ".\stab_v1-stab2Prot2.net" 
+
+
+.END

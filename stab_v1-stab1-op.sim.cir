@@ -1,0 +1,17 @@
+** Profile: "stab1-OP"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-op.sim ] 
+
+** Creating circuit file "stab_v1-stab1-op.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OP
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\stab_v1-stab1.net" 
+
+
+.END

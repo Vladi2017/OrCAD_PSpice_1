@@ -1,0 +1,129 @@
+←↑→↓↔↕, ↗↘ ↗
+tag(s):,,,,,,diodaZener,,,,,,,,,,,,,stab_v1_SCHEMATIC2,,,,,,,,,,,,,,,tranzistorBipolar,,,,,,,,,,,,,,,,,,,
+4:44 PM Tuesday, March 22, 2022:
+16. Proiectarea si simularea (OrCAD) unui stabilizator de tensiune cu parametrii Vin = 10 - 15V (amplitudinea variabila a semnalului de intrare); Vout (amplitudinea stabilizata a semnalului de iesire) = 10V; Ps = 3W (puterea pe rezistenta de sarcina); Precizie = 5%. - Manolescu.
+Is = Ps / Vout = 3 / 10 = 0.3A  => Is = 0.3A = 300mA. Vout = Vout � 5% => Vout = [9.5V 10.5V] pt. Vin = [10V 15V]. Cu alte cuvinte, prin proiectare trebuie sa avem o variatie de max. 10.5% pe tensiunea stabilizata de iesire la o variatie de max. 50% pe intrare.
+Rs_min = Vout^2 / Ps = 100 / 3 = 33.3 Ohm.
+#{12:05 AM 4/7/2022: ATENTIE.. parametrii de proiectare impusi trebuie considerati ca si criterii de performanta / functionalitate minim acceptate. De ex. stabilizatorul va fi acceptat chiar daca stabilizeaza la Ps = 4W sau va avea o precizie mai buna de 5%. Pe de alta parte o proiectare (cu mult) peste parametrii de performanta impusi prin tema de proiectare poate conduce la cresterea (nejustificata) a costurilor. Aceste considerente sunt general valabile (in sensul ca nu se reduc numai la domeniul electronicii). In fond o definitie a performantei poate fi: atingerea obiectivului cu minimum de resurse.}
+{
+Simulation Profiles:11:02 PM 5/17/2022:
+Nota: stab1: este stabilizatorul fara protectie la scurtcircuit.; stab2Prot2: este stabilizatorul cu protectie la scurtcircuit.;
+stab1-DC_Sweep_vI = Simulare DC-Sweep stabilizator fara protectie la sc, se baleiaza vI in special pt. estimarea factorului de stabilizare in sarcina K = dvI/dvO.
+stab1-OP = Simulare Bias Point stabilizator fara protectie la sc,  pt vizualizare tensiuni, curenti si puteri pe sarcina maxima si la scurtcircuit.(Atentie.. rezultatele sunt prezentate pe schema OrCAD).
+stab1-sweep_Rs_vI = Stabilizator fara protectie la sc, se baleiaza sarcina Rs la diferile nivele de vI pentru studiul rezistentei de iesire Ro=dvO/dIO.
+stab1-sweepRs-sc = Stabilizator fara protectie la sc, se baleiaza sarcina Rs pana la scurtcircuit (Rs=0.01 Ohm) pt. a evidentia curentul si puterea pe regulatorul serie Q1.
+stab1RedrMono1-tran1 = Stabilizator fara protectie la sc, analiza de timp (tranzitorie) cu stablizatorul conectat la un redresor monoalternanta.
+Nota: Simulation Profiles pt. stabilizatorul cu protectie la scurtcircuit sunt similare cu cele de mai sus cu precizarea ca la nume incep cu stab2Prot2.
+Fiecare Simulation Profile are asociat in PSpice niste ecrane (accesibile din meniul Window - Display Control):
+stab1-DC_Sweep_vI : vI_vO_S_WRs_fvI_comments1
+stab1-sweep_Rs_vI : Ro_f(WRs_vI)_comments, vO_f(WRs_vI)_comments
+stab1-sweepRs-sc : vO_WRs_vI_WQ1_iCQ1_fRL-sc-2yc
+stab1RedrMono1-tran1 : vI_vO_fTime-1y, v1_vI_vO_fTime-1y
+stab2Prot2-DC_Sweep_vI: vI_vO_S_WRs_fvI_comments1
+stab2Prot2-sweep_Rs_vI : Ro_f(WRs_vI)_comments, vO_f(WRs_vI)_comments
+stab2Prot2-sweepRs-sc : vO_vI_iBQ1_iCQ1_fRL-sc-3yc, vO_WRs_vI_WQ1_iCQ1_fRL-sc-2yc
+stab2Prot2RedrMono1-tran1 : v1_vI_vO_fTime-1y2pc, vI_vO_fTime-1yc
+Explicatii denumire ecran (Display Control):
+vO_vI_iBQ1_iCQ1_fRL-sc-3y1pc: where sc=shortCircuit; 3y=plotOn3Yaxis; c=thereAreComments; fRL=functionOnResLoad; 1p=onePlotInTheWindow, 2p=TwoPlotsInTheWindow;
+}
+{
+10:42 PM Wednesday, April 6, 2022: ref1. https://eprofu.ro/docs/electronica/carti/auxiliar-circuite-electronice.pdf , pg.88
+3.4.3 Calculul stabilizatorului de tensiune serie cu amplificator de eroare.
+Elemente de proiectare in exemplu:
+Se cunoaste: Vin = intre 10V si 15V; Vout = 9V; curentul (maxim) in sarcina Is = 500mA.
+}
+Scientists study the world as it is; engineers create the world that has never been.� - Theodore von Karman
+DiotecSemiconductor_diodesCharacteristics_technicalExplanations
+{
+5.1.4 tag.tranzistorBipolar PARAMETRII SI CARACTERISTICILE TRANZISTORULUI BIPOLAR, https://eprofu.ro/docs/electronica/analogica/componente/6tb-functionare-parametrii-functii.pdf, pg.3 #{6:39 PM 4/8/2022}
+Un tranzistor bipolar functioneaza corect, daca jonctiunea baza-emitor este polarizata direct cu o tensiune mai mare dec�t tensiunea de prag, iar jonctiunea baza-colector este polarizata invers cu o tensiune mult mai mare dec�t tensiunea baza-emitor.
+�CC = Ic / Ib, (�n regim activ normal (RAN)) � este o marime statica de curent continuu. Factorul de amplificare �n curent din baza �n colector (�cc).
+hFE = �CC (parametru echivalent hibrid hFE).
+a2. Valorile maxime absolute
+Sunt valori care nu trebuie depasite �n timpul functionarii tranzistorului, deoarece pot produce defectarea acestuia. De regula �n aceasta grupa apar:
+? Tensiunile maxime �ntre terminale: VCBO, VCEO, VEBO;
+? Curentul maxim de colector si de baza: ICM, IBM;
+? Puterea maxima disipata: Ptot;
+? Temperatura maxima a jonctiunii: TjM (este cuprinsa �ntre 175�C si 200�C).
+�n practica se recomanda �ncarcarea tranzistorului la cel mult 0,75 din valorile de catalog ale acestor parametrii.
+}
+#{vD=Vz+vBE3=(R_2+P)/(R_1+R_2+P)vO => notam (R_2+P)=R2, R_1=R1, ==> vD=R2/(R1+R2)vO ==> vO=(R1+R2)/R2vD=(1+R1/R2)vD ==> vO>=vD ; 4:08 PM 5/17/2022}
+{
+9:48 PM Friday, April 8, 2022, https://www.tme.eu/html/RO/tranzistoare-bipolare-nte-electronics/ramka_25271_RO_pelny.html :
+Simbol	Tranzistor	Uce	Ic	Pd	hFE	      f	        Carcasa	Montare	Ambalaj	Subtip tranzistor	Caracteristici	R1	R2
+                    [V]	[A]	[W]	[Hz]						                                             [kO]	[kO]
+NTE255	NPN	        300	0,5	2	10...50	30 M...300 M	TO237	    THT	-	-	-	-	-
+}
+{
+tag.stab_v1_SCHEMATIC2
+R4 = ((VinMin-(Uz+Ube3))/IsMax)�1�2; R2 = (Uz+Ube2)/(10*IsMax)�1�2�3; RdivizorTotal = Us/(10*IsMax)�1�2�3; R1 = RdivizorTptal-R2;
+end.tag.stab_v1_SCHEMATIC2
+}
+{
+tag.tmp1.:
+#{LM317M 500 mA Adjustable Output, Positive Voltage Regulator, Line Regulation (Note 3) (TA = 25�C, 3.0 V = VI - VO = 40 V); 12:29 PM 4/11/2022}
+{
+               BC107B          
+               NPN             
+          IS    7.049000E-15 
+          BF  381.7          
+          NF    1            
+         VAF   59.59         
+         IKF    3.289        
+         ISE   59.740000E-15 
+          NE    1.522        
+          BR    2.359        
+          NR    1            
+         IKR    7.807        
+         ISC  192.900000E-12 
+          NC    1.954        
+          RC    1.427        
+         CJE   11.500000E-12 
+         VJE     .5          
+         MJE     .2718       
+         CJC    5.380000E-12 
+         VJC     .6218       
+         MJC     .329        
+          TF  438.000000E-12 
+         XTF   14.51         
+         VTF   10            
+         ITF    5.716        
+          TR   10.000000E-09 
+         XTB    1.5          
+          CN    2.42         
+           D     .87
+}
+#{Fig.xx.: Analiza sweep_vI stabilizator cu circuit de protec?ie la sc. Se obs. degradarea pronun?ata a coeficientului de stabilizare (�n sarcina) K < 2 �n zona vI,min, comparativ cu varianta fara circuit de protec?ie la sc (compara?ie cu graficul fig.xx, pag.xx). Practic zona de satura?ie Q1 se prelunge?te cu cca. 200mV, consecin?a influen?ei �senzorului� de sc R6. Cu alte cuvinte stabilizarea este relativ precara �n zona vI,min [10..10.3]V, acesta fiind (par?ial) pre?ul platit pt. a avea protec?ie la scurt circuit.  Totu?i, pt. un riplu de 50Hz �n zona vI,min val. mica a lui K va fi compensata par?ial de condensatorul C1 de la ie?irea stabilizatorului. R6 accentueaza influen?a zonei de satura?ie a regulatorului Q1. �n consecin?a deducem ca �senzorul� R6 nu ar avea o influen?a semnificativa asupra lui K (coeficientului de stabilizare �n sarcina) daca stabilizatorul ar lucra cu vO < vI,min (aspect reliefat si de graficele din fig.xx, pag.xx). Pe de alta parte acest aspect justifica solu?ia de protec?ie la scurt circuit (configura?ie Darlington cu atacarea circuitului de reac?ie), aleasa tocmai �n idea de a reduce c�t mi mult valoarea R6. 8:06 PM 5/11/2022}
+#{De ce variaza Ro �n raport cu puterea (curentul) pe sarcina?? 7:11 PM 5/12/2022}
+
+#{vI_vO_iRs_iBQ1_fRload-sc; vO_iRs_vCE2_fRload-sc; vI_vO_iRs_Ro_fRL; 12:03 AM 5/13/2022; rename:
+vO_vI_iBQ1_iCQ1_fRL-sc-3y1pc: where sc=shortCircuit; 3y=plotOn3Yaxis; c=thereAreComments; fRL=functionOnResLoad; 1p=onePlotInTheWindow, 2p=TwoPlotsInTheWindow;
+}
+{
+tag.tmp2.: 1:07 PM Friday, May 13, 2022:
+1.	Tema proiectului.
+Proiectarea si simularea (OrCAD) unui stabilizator de tensiune cu parametrii Vin = 10 - 15V (amplitudinea variabila a semnalului de intrare); Vout (amplitudinea stabilizata a semnalului de iesire) = 10V; Ps = 3W (puterea pe rezistenta de sarcina); Precizie = 5%.
+
+1.1.	Aspecte specifice.
+Din cerințele temei de proiect se observă că avem constrângerea vI,min ≈ vO. Din acest considerent:
+-	s-a evitat implementarea unei scheme cu element de reglare paralel (datorită căderii de tensiune pe rezistența de balast).
+-	nu s-a adoptat soluția cu element regulator serie de tip NPN (pe borna + a ieșirii), evitându-se astfel căderea de tensiune BE (care la tranzistoarele de medie putere poate fi 0.75V ÷ 0.9V).
+Întrucât nu putem avea o cădere nulă de tensiune pe stabilizator (ceea ce ar presupune un randament de 100% al acestuia), pentru domeniul vI,min s-a urmărit încadrarea în precizia de 5% admisă de tema de proiect. Prin urmare se propune schema de stabilizator de tensiune prezentată la pg. xx cu regulator serie de tip PNP.
+Ca o primă observație importantă trebuie remarcat că în zona vI,min regulatorul serie PNP va funcționa în regim de saturație unde ne așteptăm la căderi vCE1 de 0.2 ÷ 0.3V, deci aparent ne putem încadra în precizia de 5% [9.5 ÷ 10.5]V.
+
+2.	Prezentarea principiului de funcționare.
+Schema OrCAD este prezentată la pg.xx: Stabilizator liniar cu reacție de tip amplificator de eroare, cu regulator serie.
+Tranzistorul Q1 are rol de element regulator serie. Amplificatorul de eroare (de tip transconductanță) este format din tranzistoarele Q3 și Q2. De remarca că în amplificatorul de eroare s-au folosit 2 tranzistoare NPN astfel încât faza reacției să compenseze efectele ”perturbației” (variația vI respectiv iO) asupra tensiunii de ieșire vO.
+Dioda Zener lucrează în zona de străpungere astfel încât vZ are o valoare aproximativ constantă, egală cu tensiunea nominală de străpungere a diodei Vz (parametru de catalog). Rz are rol de polarizare a diodei Zener. Se va alege i[Rz] >> iC2 astfel încât i[Rz] ≈ iZ. Astfel variațiile curentului iC2 nu vor afecta semnificativ vZ.
+Cu ajutorul semireglabilului P se va fixa tensiunea la ieșirea stabilizatorului. Pentru a ataca în tensiune intrarea reacției (vB3), curentul prin divizorul rezistiv  (iD) trebuie să fie >> iB3.
+Funcționarea schemei: pentru tensiunea VO = 10V fixată din semireglabilul P, tranzistorul regulator serie Q1 anulează tendințele de variație ale tensiunii vO atunci când vI sau iO variază. Cum vI = vCE1 + vO, avem:
+- când vI crește sau iO scade tendința va fi ca vO să crească. Aceasta implică succesiv: vB3 => vBE3 => iC3 => iB2 => iC2 => iB1 => vCE1 => vO. Se observă că regulatorul serie preia tendința de creștere vO.
+- când vI scade sau iO crește tendința va fi ca vO să scadă, cu următoarele consecințe: vB3 => vBE3 => iC3 => iB2 => iC2 => iB1 => vCE1 => vO. Se observă din nou că regulatorul serie compensează tendința de scădere vO pe sarcină.
+#{În fig.xx sunt prezentate comparativ grafice cu impedanțele de ieșire funcție de puterea pe sarcină respectiv de tensiunea de intrare vI pentru cele 2 cazuri considerate (fără, respectiv cu protecție la suprasarcină).;8:42 PM 5/16/2022}
+end.tag.tmp2.
+}
+{
+←↑→↓↔↕, ↗↘ ↗↗ ↗↘
+}
+}
+

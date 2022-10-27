@@ -1,0 +1,17 @@
+.ALIASES
+R_Rs            Rs(1=VO 2=0 )
+R_R             R(1=N21878 2=VI )
+R_P             P(1=D 2=N592000 )
+R_R5            R5(1=N50405 2=N53086 )
+R_R1            R1(1=VO 2=D )
+V_V1            V1(+=VI -=0 )
+D_D1            D1(1=0 2=N41071 )
+R_R2            R2(1=0 2=N592000 )
+Q_Q1            Q1(C=VO B=N53086 E=VI )
+R_Rz            Rz(1=N41071 2=VO )
+Q_Q3            Q3(c=N21878 b=D e=N41071 )
+Q_Q2            Q2(c=N50405 b=N21878 e=N41071 )
+_    _(vI=VI)
+_    _(vO=VO)
+_    _(D=D)
+.ENDALIASES

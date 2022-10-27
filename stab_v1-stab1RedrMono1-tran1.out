@@ -1,0 +1,245 @@
+
+**** 05/14/22 22:43:22 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1RedrMono1-tran1"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1RedrMono1-tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "stab_v1-stab1RedrMono1-tran1.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 0.1s 0 1m 
+.SAVEBIAS "C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\bias1" TRAN NOSUBCKT 
+.OPTIONS LIST
+.PROBE V(alias(*)) I(alias(*)) W(alias(*)) 
+.INC ".\stab_v1-stab1RedrMono1.net" 
+
+
+
+**** INCLUDING stab_v1-stab1RedrMono1.net ****
+* source STAB_V1
+Q_Q2         N50405 N21878 N41071 BC546A 
+Q_Q1         VO N53086 VI QBD136/PLP 
+C_C2         VI 0  470u  
+R_R2         0 N632140  160k  
+D_D2         N68957 VI D1N3940 
+R_P         D N632140 {50k*0.25+.001}
+R_R1         VO D  130k  
+C_C1         VO 0  47u  
+R_R         N21878 VI  100k  
+V_V1         N68957 0  
++SIN 0 15 50 0 0 0
+Q_Q3         N21878 D N41071 BC546A 
+R_Rz         N41071 VO  150  
+D_D1         0 N41071 D1N4733 
+R_Rs         VO 0  {Rload}  
+R_R5         N50405 N53086  68  
+.PARAM  Rload=200
+
+**** RESUMING stab_v1-stab1RedrMono1-tran1.sim.cir ****
+.END
+
+**** 05/14/22 22:43:22 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1RedrMono1-tran1"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1RedrMono1-tran1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N3940         D1N4733         
+          IS  400.000000E-12    1.214000E-15 
+           N    1.48                         
+         ISR                    2.601000E-09 
+          BV  600               5.1          
+         IBV  100.000000E-06     .70507      
+         NBV                     .74348      
+        IBVL                    4.827400E-03 
+        NBVL                    6.7393       
+          RS     .105           1.078        
+          TT  800.000000E-09                 
+         CJO   19.500000E-12  185.000000E-12 
+          VJ     .4              .75         
+           M     .38             .3509       
+          FC     .9                          
+          EG    1.36                         
+         XTI   -8                            
+        TBV1                  176.471000E-06 
+
+
+**** 05/14/22 22:43:22 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1RedrMono1-tran1"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1RedrMono1-tran1.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BC546A          QBD136/PLP      
+               NPN             PNP             
+          IS    7.049000E-15   74.010000E-15 
+          BF  253             336.5          
+          NF    1                .9938       
+         VAF  127.9            22.47         
+         IKF     .07705          .1689       
+         ISE   96.260000E-15  410.400000E-18 
+          NE    1.556           1.054        
+          BR    1              13.91         
+          NR    1                .9913       
+         VAR                   30            
+         IKR    3.321            .09888      
+         ISC  130.800000E-15   12.900000E-15 
+          NC    1.602           1.1          
+          NK     .5305                       
+          RB                     .5          
+         RBM                     .5          
+         IRB                    1.000000E-06 
+          RE                     .208        
+          RC     .8766           .05526      
+         CJE   11.500000E-12  106.600000E-12 
+         VJE     .5              .69         
+         MJE     .6715           .3676       
+         CJC    5.250000E-12   52.340000E-12 
+         VJC     .5697           .6431       
+         MJC     .3147           .4436       
+        XCJC                     .44         
+         MJS                     .333        
+          FC                     .99         
+          TF  409.500000E-12  257.800000E-12 
+         XTF   40.12           13.56         
+         VTF   10               2.366        
+         ITF    1.994           1.304        
+          TR   10.000000E-09  100.000000E-27 
+         XTB    1.5                          
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+**** 05/14/22 22:43:22 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1RedrMono1-tran1"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1RedrMono1-tran1.sim ] 
+
+
+ ****     CIRCUIT ELEMENT SUMMARY
+
+
+******************************************************************************
+
+
+
+
+
+
+**** RESISTORS
+
+NAME               NODES      MODEL     VALUE       TC1       TC2       TCE
+
+R_R2             0 N632140             1.60E+05 
+R_P              D N632140             1.25E+04 
+R_R1            VO       D             1.30E+05 
+R_R         N21878      VI             1.00E+05 
+R_Rz        N41071      VO             1.50E+02 
+R_Rs            VO       0             2.00E+02 
+R_R5        N50405  N53086             6.80E+01 
+
+
+**** CAPACITORS
+
+NAME               NODES      MODEL     VALUE   In. Cond.     TC1       TC2
+
+C_C2            VI       0             4.70E-04           
+C_C1            VO       0             4.70E-05           
+
+
+**** INDEPENDENT SOURCES
+
+NAME               NODES    DC VALUE  AC VALUE  AC PHASE
+
+V_V1        N68957       0  0.00E+00  0.00E+00  0.00E+00  degrees
+                TRANSIENT:  SIN
+                    Offset  0.00E+00 
+                 Amplitude  1.50E+01 
+                      Freq  5.00E+01 
+                     Delay  0.00E+00 
+                   Damping  0.00E+00 
+                     Phase  0.00E+00 
+
+
+
+**** DIODES
+
+NAME             +       -  MODEL        AREA
+
+D_D2        N68957      VI D1N3940     1.00E+00 
+D_D1             0  N41071 D1N4733     1.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+NAME             C       B       E       S MODEL         AREA
+
+Q_Q2        N50405  N21878  N41071       0 BC546A      1.00E+00 
+Q_Q1            VO  N53086      VI       0 QBD136/PLP  1.00E+00 
+Q_Q3        N21878       D  N41071       0 BC546A      1.00E+00 
+
+
+**** 05/14/22 22:43:22 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1RedrMono1-tran1"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1RedrMono1-tran1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    D)-142.8E-21  (   VI)-148.2E-15  (   VO)-229.1E-21  (N21878)-148.2E-15     
+
+(N41071)-401.0E-21 (N50405)-102.2E-15 (N53086)-102.2E-15 (N68957)    0.0000     
+
+(N632140)-132.4E-21                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.428E-24
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .05
+

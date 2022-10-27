@@ -1,0 +1,21 @@
+* source STAB_V1
+X_Q5         VI N59015 N68583 BCV47
+R_Rs         VO 0  {Rload}  
+C_C2         VI 0  3300uF  
+R_R         N21831 VI  100K  
+R_P         D N592020 {50k*0.25+.001}
+D_D2         N63346 VI D1N3940 
+R_R5         N50405 N53086  68  
+R_R1         VO D  130k  
+Q_Q4         N59015 N19462 VI BC558A 
+V_V1         N63346 0  
++SIN 0 14 50 0 0 90
+D_D1         0 N41071 D1N4733 
+R_R7         N68583 D  100  
+R_R2         0 N592020  160k  
+Q_Q1         VO N53086 N19462 QBD136/PLP 
+R_Rz         N41071 VO  150  
+Q_Q3         N21831 D N41071 BC546A 
+Q_Q2         N50405 N21831 N41071 BC546A 
+R_R6/1W         VI N19462  560mOhm  
+.PARAM  Rload=31

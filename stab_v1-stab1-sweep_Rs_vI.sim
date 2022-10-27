@@ -1,0 +1,120 @@
+@OrCAD Simulation Server Version: 1.0
+
+@Settings: 1 1
+@General:
+ProfileName= "sweep_Rs_vI" 
+ProfileFile= "stab_v1-stab1-sweep_rs_vi.sim" 
+DesignFile= "stab_v1.dsn" 0 
+ProjectFile= "stab_v1.opj" 
+NetlistFile= "stab_v1-stab1-sweep_Rs_vI.sim.cir" 
+RootSchematics= "stab1" 
+DataFile= "stab_v1-stab1-sweep_Rs_vI.dat" 
+OutFile= "stab_v1-stab1-sweep_Rs_vI.out" 
+Notes=
+@#$BEGINNOTES
+Stabilizator fara protectie la sc, se baleiaza sarcina Rs la diferile nivele de vI pentru studiul rezistentei de iesire Ro=dvO/dIO.
+@#$ENDNOTES
+@End General
+@Analysis: 0 0
++0 0 0 
++0 "1000ns" 
++1 "" 
++2 "0" 
++3 "" 
++4 "" 
++5 "" 
++6 "" 
+@End Analysis
+@Analysis: 1 0
++2 0 0
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
+@End Analysis
+@Analysis: 2 1
++0 2
++0 "" 
++1 "Rload" 
++2 "" 
++3 "" 
++4 "101" 
++5 "31" 
++6 "-1" 
++7 "" 
+@End Analysis
+@Analysis: 3 0
++0 0 0
++0 "" 
++1 "" 
++2 "" 
+@End Analysis
+@Analysis: 4 0
++0 0 1 0 0 0 1 0 
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
++6 "" 
++7 "" 
+@End Analysis
+@Analysis: 5 0
++0 0
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
++6 "" 
++7 "" 
+@End Analysis
+@Analysis: 6 0
++1 
++0 "" 
+@End Analysis
+@Analysis: 7 0
++0 0
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
+@End Analysis
+@Analysis: 8 0
++0 
++0 "" 
++1 "" 
++2 "" 
++3 "" 
++4 "" 
++5 "" 
+@End Analysis
+@Analysis: 9 0
++0 "" 
+@End Analysis
+@Analysis: 10 1
++3 0
++0 "V1" 
++1 "" 
++2 "" 
++3 "" 
++4 "10" 
++5 "15" 
++6 "1" 
++7 "10 10.1 10.2 10.4 11 13 15" 
+@End Analysis
+@Analysis: 11 1
++ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+@End Analysis
+@Analysis: 12 0
++8917264 0
+@End Analysis
+@Analysis: 13 1
++0 1 1 0
+@End Analysis

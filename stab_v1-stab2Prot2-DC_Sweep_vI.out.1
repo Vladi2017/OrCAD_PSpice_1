@@ -1,0 +1,138 @@
+
+**** 05/08/22 04:21:16 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-DC_Sweep_vI"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2Prot2-DC_Sweep_vI.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "stab_v1-stab2Prot2-DC_Sweep_vI.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 10 15 0.5 
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\stab_v1-stab2Prot2.net" 
+
+
+
+**** INCLUDING stab_v1-stab2Prot2.net ****
+* source STAB_V1
+R_R1         VO D  1.2Meg  
+Q_Q1         VO N53086 N19462 QBD136/PLP 
+Q_Q4         N53735 N19462 VI BC558A 
+R_R2         0 N363190  1.6Meg  
+C_C1         VO 0  4.7u  
+R_R4         N21831 VI  120K  
+Q_Q5         VI N53735 D BC107BP/ZTX 
+Q_Q2         N50405 N21831 N41071 BC546A 
+V_V1         VI 0 10V
+D_D1         0 N41071 D1N4733 
+Q_Q3         N21831 D N41071 BC546A 
+R_R3         D N363190 {500k*0.3+.001}
+R_R5         N50405 N53086  100  
+R_R5/2W         VI N19462  560mOhm  
+R_Rz         N41071 VO  150  
+R_Rs         VO 0  {Rload}  
+.PARAM  Rload=35
+
+**** RESUMING stab_v1-stab2Prot2-DC_Sweep_vI.sim.cir ****
+.END
+
+**** 05/08/22 04:21:16 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-DC_Sweep_vI"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2Prot2-DC_Sweep_vI.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4733         
+          IS    1.214000E-15 
+         ISR    2.601000E-09 
+          BV    5.1          
+         IBV     .70507      
+         NBV     .74348      
+        IBVL    4.827400E-03 
+        NBVL    6.7393       
+          RS    1.078        
+         CJO  185.000000E-12 
+          VJ     .75         
+           M     .3509       
+        TBV1  176.471000E-06 
+
+
+**** 05/08/22 04:21:16 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab2Prot2-DC_Sweep_vI"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab2Prot2-DC_Sweep_vI.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               QBD136/PLP      BC558A          BC546A          BC107BP/ZTX     
+               PNP             PNP             NPN             NPN             
+          IS   74.010000E-15    1.020000E-15    7.049000E-15   18.000000E-15 
+          BF  336.5           174.7           253             400            
+          NF     .9938          1               1                .9955       
+         VAF   22.47           73.79          127.9            80            
+         IKF     .1689           .1023           .07705          .14         
+         ISE  410.400000E-18   10.730000E-15   96.260000E-15   50.000000E-15 
+          NE    1.054           1.644           1.556           1.46         
+          BR   13.91            4.432           1              35.5          
+          NR     .9913          1               1               1.005        
+         VAR   30                                              12.5          
+         IKR     .09888         2.237           3.321            .03         
+         ISC   12.900000E-15   14.740000E-15  130.800000E-15  172.000000E-15 
+          NC    1.1             1.296           1.602           1.27         
+          NK                     .5033           .5305                       
+          RB     .5                                              .56         
+         RBM     .5                                                          
+         IRB    1.000000E-06                                                 
+          RE     .208                                            .6          
+          RC     .05526         1.039            .8766           .25         
+         CJE  106.600000E-12   30.000000E-12   11.500000E-12   13.000000E-12 
+         VJE     .69             .5              .5                          
+         MJE     .3676           .3333           .6715                       
+         CJC   52.340000E-12    9.810000E-12    5.250000E-12    4.000000E-12 
+         VJC     .6431           .4865           .5697           .54         
+         MJC     .4436           .332            .3147                       
+        XCJC     .44                                                         
+         MJS     .333                                                        
+          FC     .99                                                         
+          TF  257.800000E-12  830.300000E-12  409.500000E-12  640.000000E-12 
+         XTF   13.56           10.32           40.12                         
+         VTF    2.366          10              10                            
+         ITF    1.304            .8981          1.994                        
+          TR  100.000000E-27   10.000000E-09   10.000000E-09   50.720000E-09 
+         XTB                    1.5             1.5                          
+          CN    2.2             2.2             2.42            2.42         
+           D     .52             .52             .87             .87         
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+

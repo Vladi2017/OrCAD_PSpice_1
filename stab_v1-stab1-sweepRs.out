@@ -1,0 +1,133 @@
+
+**** 05/08/22 06:27:45 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-sweepRs"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-sweeprs.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "stab_v1-stab1-sweeprs.sim.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Orcad\PSpice\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC OCT PARAM Rload 0.001 40 5 
+.PROBE V(*) I(*) W(*) D(*) NOISE(*) 
+.INC ".\stab_v1-stab1.net" 
+
+
+
+**** INCLUDING stab_v1-stab1.net ****
+* source STAB_V1
+R_Rz         VO N02540  270  
+Q_Q2         N10696 REF N02540 BC546A 
+Q_Q1         VO N10696 VI QBD136/PLP 
+R_R1         VO D  270k  
+Q_Q3         REF D N02540 BC546A 
+R_P         D N049430 {100k*0.25+.001}
+R_R2         0 N049430  330k  
+D_D1         0 N02540 D1N4733 
+V_V1         VI 0 15V
+R_Rs         VO 0  {Rload}  
+R_R4         REF VI  100k  
+.PARAM  Rload=35
+
+**** RESUMING stab_v1-stab1-sweeprs.sim.cir ****
+.END
+
+**** 05/08/22 06:27:45 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-sweepRs"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-sweeprs.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4733         
+          IS    1.214000E-15 
+         ISR    2.601000E-09 
+          BV    5.1          
+         IBV     .70507      
+         NBV     .74348      
+        IBVL    4.827400E-03 
+        NBVL    6.7393       
+          RS    1.078        
+         CJO  185.000000E-12 
+          VJ     .75         
+           M     .3509       
+        TBV1  176.471000E-06 
+
+
+**** 05/08/22 06:27:45 ********* PSpice 9.2 (Mar 2000) ******** ID# 1 ********
+
+ ** Profile: "stab1-sweepRs"  [ C:\Users\mvman\projects2\OrCAD\AnaSim\stabilizTensiune\stab_v1-stab1-sweeprs.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               BC546A          QBD136/PLP      
+               NPN             PNP             
+          IS    7.049000E-15   74.010000E-15 
+          BF  253             336.5          
+          NF    1                .9938       
+         VAF  127.9            22.47         
+         IKF     .07705          .1689       
+         ISE   96.260000E-15  410.400000E-18 
+          NE    1.556           1.054        
+          BR    1              13.91         
+          NR    1                .9913       
+         VAR                   30            
+         IKR    3.321            .09888      
+         ISC  130.800000E-15   12.900000E-15 
+          NC    1.602           1.1          
+          NK     .5305                       
+          RB                     .5          
+         RBM                     .5          
+         IRB                    1.000000E-06 
+          RE                     .208        
+          RC     .8766           .05526      
+         CJE   11.500000E-12  106.600000E-12 
+         VJE     .5              .69         
+         MJE     .6715           .3676       
+         CJC    5.250000E-12   52.340000E-12 
+         VJC     .5697           .6431       
+         MJC     .3147           .4436       
+        XCJC                     .44         
+         MJS                     .333        
+          FC                     .99         
+          TF  409.500000E-12  257.800000E-12 
+         XTF   40.12           13.56         
+         VTF   10               2.366        
+         ITF    1.994           1.304        
+          TR   10.000000E-09  100.000000E-27 
+         XTB    1.5                          
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .02
+
