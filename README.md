@@ -19,4 +19,4 @@ Load stab_v1.opj project file.
 
 Tip: to see simulations results (directly) select Active Profile from the pull down menu (e.g.: stab2Prot2-DC_Sweep_vI) - click View Simulation Results button. Then in the opened PSpice Probe window: Window - Display Control... - select one predefined display - Restore. The simulation results graphics should show up instantly.
 
-Also there is project_doc/projectDoc_VoltageRegulator_2.pdf (Romanian language).
+Also there is [project_doc/projectDoc_VoltageRegulator_2.pdf](https://github.com/Vladi2017/OrCAD_PSpice_1/blob/main/project_doc/projectDoc_VoltageRegulator_2.pdf) (Romanian language).
